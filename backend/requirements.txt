@@ -1,0 +1,9 @@
+tensorflow
+opencv-python
+numpy
+scikit-learn
+matplotlib
+Flask
+Flask-Cors
+Pillow
+librosa
