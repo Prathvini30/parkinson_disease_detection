@@ -1,47 +1,86 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.so
 
-# dependencies
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Frontend ---
+
+# Dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
-
-# production
+# Production
 /build
+/dist
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# --- Project Specific ---
 
-# testing
-/coverage
-/spiral_images
-/voice_samples
-# production
-/build
+# Trained models
+*.joblib
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Uploaded files
+uploads/
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Datasets (These can be large, consider Git LFS or other storage)
+spiral_images/
+voice_samples/

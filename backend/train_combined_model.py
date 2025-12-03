@@ -4,7 +4,7 @@ from PIL import Image
 import librosa
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.preprocessing import LabelEncoder
 import joblib
 
@@ -120,7 +120,14 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+
 print(f"Model Accuracy on Test Set: {accuracy * 100:.2f}%")
+print(f"Model Precision on Test Set: {precision * 100:.2f}%")
+print(f"Model Recall on Test Set: {recall * 100:.2f}%")
+print(f"Model F1-score on Test Set: {f1 * 100:.2f}%")
 
 # --- Save the Model and Label Encoder ---
 

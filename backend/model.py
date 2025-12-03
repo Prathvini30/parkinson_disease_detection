@@ -45,6 +45,7 @@ history = model.fit(
     verbose=1
 )
 
+
 # ✅ Save the Model
 model.save(os.path.join("backend", "parkinson_model.keras"))
 print("✅ Model training complete and saved as 'parkinson_model.keras'!")
