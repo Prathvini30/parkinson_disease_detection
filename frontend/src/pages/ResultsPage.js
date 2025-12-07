@@ -21,7 +21,7 @@ const ResultsPage = () => {
             <p className="prediction-sentence">Based on the assessment, the person is **{prediction}**.</p>
             <div className="recommendations">
               <h3>Recommendations</h3>
-              <p>This is a preliminary assessment and not a medical diagnosis. Please consult a healthcare professional for a comprehensive evaluation.</p>
+              <p>This is a preliminary assessment. Please consult a healthcare professional for a comprehensive evaluation.</p>
             </div>
           </div>
         ) : (
