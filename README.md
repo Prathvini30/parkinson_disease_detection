@@ -1,123 +1,123 @@
-# Parkinson's Disease Detection
+🧠 Parkinson's Disease Detection – Multimodal Deep Learning System
 
-This project is a full-stack web application designed to predict the likelihood of Parkinson's disease based on a combination of user-submitted data: spiral drawings, voice recordings, and a questionnaire about symptoms.
+This project is a full-stack web application that predicts the likelihood of Parkinson’s Disease using three different inputs: spiral drawings, voice recordings, and symptom scores. It uses a multimodal deep learning model to give a combined prediction with confidence.
 
-## 🌟 Features
+🚀 Features
+🌀 1. Spiral Drawing Analysis
 
-- **Multi-modal Prediction:** Utilizes three different data points for a more comprehensive assessment:
-    - **Image Analysis:** Analyzes spiral drawings for motor impairment.
-    - **Voice Analysis:** Processes voice recordings to detect vocal tremors and instability.
-    - **Symptom Questionnaire:** Incorporates self-reported symptoms for a holistic view.
-- **Simple Web Interface:** An easy-to-use frontend built with React to guide the user through the data submission process.
-- **Machine Learning Backend:** A Python backend powered by a Random Forest model to process the data and provide a prediction.
+Users upload a hand-drawn spiral image. A CNN model analyzes shape irregularities related to motor dysfunction.
 
-## 🛠️ Tech Stack
+🎤 2. Voice Analysis
 
-- **Frontend:** React, JavaScript
-- **Backend:** Python, Flask
-- **Machine Learning:** Scikit-learn
-- **Data Handling:** Pandas, NumPy, Librosa (for audio), Pillow (for images)
+Users record a short audio sample. Using Librosa, MFCC features are extracted to detect vocal tremor and instability.
 
-## 📂 Project Structure
+📝 3. Symptom Questionnaire
 
-```
-.
-├── backend/            # Contains the Flask server, ML model, and prediction logic
-│   ├── app.py          # Main Flask application
-│   ├── model.py        # (If you have a separate model definition)
-│   ├── train_combined_model.py # Script to train the model
-│   └── ...
-├── frontend/           # Contains the React user interface
-│   ├── src/
-│   ├── public/
-│   └── ...
-├── spiral_images/      # Dataset for spiral images
-├── voice_samples/      # Dataset for voice recordings
-└── .gitignore          # Files and folders to ignore
-```
+A lightweight symptom form captures self-reported scores (tremor, stiffness, balance, sleep, speech).
 
-## ⚙️ Setup and Installation
+🤖 4. Multimodal Prediction
 
-### Prerequisites
+A deep learning model merges image, audio, and symptom features to classify between:
 
-- Python 3.8+
-- Node.js and npm
+Healthy
 
-### Backend Setup
+Parkinson’s Detected
 
-1.  **Navigate to the backend directory:**
-    ```bash
-    cd backend
-    ```
-2.  **Create and activate a virtual environment:**
-    ```bash
-    # For Windows
-    python -m venv .venv
-    .venv\Scripts\activate
+Returns both prediction + confidence score.
 
-    # For macOS/Linux
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
-3.  **Install the required Python packages:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+🧩 Technology Stack
+Backend
 
-### Frontend Setup
+Python
 
-1.  **Navigate to the frontend directory:**
-    ```bash
-    cd frontend
-    ```
-2.  **Install the required npm packages:**
-    ```bash
-    npm install
-    ```
+Flask
 
-## 🚀 Usage
+TensorFlow / Keras
 
-1.  **Run the Backend Server:**
-    From the `backend` directory:
-    ```bash
-    flask run
-    ```
-    The server will start on `http://127.0.0.1:5000`.
+Scikit-learn
 
-2.  **Run the Frontend Application:**
-    From the `frontend` directory, in a new terminal:
-    ```bash
-    npm start
-    ```
-    The application will open in your browser at `http://localhost:3000`.
+Librosa
 
-3.  **Use the Application:**
-    -   Upload a spiral drawing.
-    -   Record or upload a voice sample.
-    -   Fill out the symptom questionnaire.
-    -   Click 'Predict' to see the result.
+NumPy / Pandas
 
-## 📈 Model Performance
+Frontend
 
-The combined model was trained using a Random Forest Classifier and evaluated on a test set. The following metrics were achieved:
+React.js
 
-- **Accuracy:** 83.33%
-- **Precision:** 100.00%
-- **Recall:** 66.67%
-- **F1-score:** 80.00%
+JavaScript
 
-*Note: These metrics are based on the provided dataset and should be interpreted as a proof-of-concept. For a real-world medical application, a much larger and more diverse dataset would be required.*
+HTML / CSS
 
-## 🤝 Contributing
+🧠 Final Model – Multimodal CNN
 
-Contributions are welcome! If you have suggestions for improving the model or the application, please feel free to fork the repository and submit a pull request.
+The final architecture merges three branches:
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+🔹 Image Branch (CNN)
 
-## 📄 License
+Extracts spatial features from spiral images.
 
-This project is licensed under the MIT License - see the `LICENSE` file for details (if you choose to add one).
+🔹 Audio Branch
+
+Dense network trained on MFCC features from Librosa.
+
+🔹 Questionnaire Branch
+
+Fully connected network processing numerical symptom scores.
+
+The three outputs are concatenated → passed to final Dense layers → binary prediction.
+
+📊 Model Performance
+
+On the current test set:
+
+Metric	Score
+Accuracy	100%
+Precision	100%
+Recall	100%
+F1-Score	100%
+
+⚠️ Note: These results are dataset-specific. Real-world accuracy requires a larger and clinically validated dataset.
+
+🛠️ Project Setup
+✔️ Prerequisites
+
+Python 3.8+
+
+Node.js + npm
+
+🖥️ Backend Setup (Flask)
+git clone <your-repository-url>
+cd parkinson_detection/backend
+
+Create Virtual Environment
+python -m venv .venv
+.venv\Scripts\activate     # Windows
+# OR
+source .venv/bin/activate  # macOS/Linux
+
+Install Dependencies
+pip install -r requirements.txt
+
+🌐 Frontend Setup (React)
+cd ../frontend
+npm install
+
+▶️ How to Run the Application
+1️⃣ (Optional) Retrain the Model
+python train_cnn_model.py
+
+2️⃣ Start the Backend
+python app.py
+
+
+Backend will run at:
+
+http://127.0.0.1:5000
+
+3️⃣ Start the Frontend
+npm start
+
+
+Frontend opens at:
+
+http://localhost:3000
